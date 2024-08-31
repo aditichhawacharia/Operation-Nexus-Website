@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Led Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Operation Nexus </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Unified background color */
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: #FFFFFF; /* Same background color for consistency */
+        }
+
+        .why-us-about {
+            display: flex;
+            padding: 4rem 2rem;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            background-color: #FFFFFF; /* Unified background */
+            position: relative;
+        }
+
+        .service-accordion {
+            max-width: 1-;
+            margin: 0 auto;
+        }
+        
+        .service-category {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .service-category h3 {
+            padding: 1rem;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .service-list {
+            max-height: 500px;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .service-name span{
+            font-weight: bolder;
+        }
+        .service-list li {
+            padding: 0.5rem 1rem;
+        }
+        
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-category.active .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .service-category.active .service-list {
+            max-height: 500px; /* Adjust this value based on your content */
+            transition: max-height 0.5s ease-in;
+        }
+
+        .trusted-by {
+            background-color: #F0F0F0; /* Unified background */
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #706E95;
+        }
+        
+        .navbar-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem; /* Increased size */
+        }
+        
+        .navbar-links {
+            display: flex;
+            gap: 2rem; /* Add space between links */
+            margin-right: 2rem; /* Add space before the button */
+        }
+        
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500; /* Make links a bit thicker */
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-links a:hover {
+            color: #e0e0e0; /* Slightly darker on hover */
+        }
+        
+        .nav-button {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #706E95;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #6c757d;
+        }
+
+        .about-us-img {
+            position: absolute;
+            top: -4rem; /* Adjusted to reduce the gap */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            max-width: 100px; /* Adjust size as needed */
+        }
+
+        .about-us-content {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            margin-top: 6rem;
+            max-width: 600px;
+        }
+
+        .about-us-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0rem;
+            font-weight: 800;
+            color: #706e95;
+        }
+
+        .about-us-content p {
+            font-size: 1.1rem;
+            color: #706e95;
+            font-weight: 300;
+            margin-top: rem;
+            line-height: 1.6;
+        }
+
+        .call-to-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .call-to-action h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #706e95;
+            margin-bottom: 0.5rem; /* Reduced spacing */
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem; /* Adjusted spacing */
+            padding: 1rem 2rem;
+            background-color: #5c4f95; /* Dark purple button */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(92, 79, 149, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(92, 79, 149, 0.7);
+        }
+
+        .cta-button .cta-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #ffffff; /* Bright white text */
+            margin-bottom: 0;
+        }
+
+        .cta-button .subtext {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            margin-top: 0.2rem; /* Adjusted for spacing */
+            color: #ffffff; /* Bright white text */
+        }
+
+        .services {
+            background-color: #706e95; /* Light purple background */
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .services h2 {
+            color: white; /* Dark purple */
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .service-category {
+            background-color: #ecebf9;
+            border-radius: 20px;
+            padding: 2rem;
+            width: 300px;
+            box-shadow: 0 4px 6px rgb(51, 9, 66);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-category h3 {
+            color: black; /* Dark purple */
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .service-list li {
+            margin-bottom: 0.5rem;
+            color: #333;
+            display: flex;
+            font-weight: 600;
+            align-items: center;
+        }
+        
+        .checkmark {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            flex-shrink: 0; /* Prevent the checkmark from shrinking */
+        }
+        
+        @media (max-width: 768px) {
+            .service-category {
+                width: 100%;
+            }
+        }
+        .trusted-by {
+            background-color: #f1f3f5;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* New Meet Our Execs Section */
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Unified background color */
+        }
+
+        .meet-our-execs {
+            background-color: #4b3b86; /* Darker purple background */
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .meet-our-execs h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .execs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .execs-grid:last-child {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .exec-circle {
+            width: 150px;
+            height: 150px;
+            background-color: #5c4f95;
+            border-color: white;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 10px 10px rgba(241, 238, 255, 0.4);
+            overflow: hidden;
+            cursor:pointer;
+            border-style: solid;
+        }
+
+       
+        .exec-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-color: white;
+        }
+
+    
+        .exec-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+
+        .exec-title {
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #ffffff;
+        }
+        .execs-button {
+            display: inline-block;
+            margin-bottom:3rem; /* Adjusted spacing */
+            padding: 1rem 2rem;
+            background-color: #ecebf9; /* Dark purple button */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(241, 238, 255, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .execs-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(237, 233, 255, 0.7);
+        }
+
+        .execs-button .cta-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #ffffff; /* Bright white text */
+            margin-bottom: 0;
+        }
+
+        .execs-button .subtext {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            margin-top: 0.2rem; /* Adjusted for spacing */
+            color: #ffffff; /* Bright white text */
+        }
+        .services .execs-button {
+            margin-top: 3rem; /* Add more space above the button */
+        }
+        .schedule-call {
+            display: flex;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            background-color: #FFFFFF;
+        }
+    
+        .calendly-container {
+            width: 40%;
+        }
+    
+        .call-info {
+            width: 55%;
+            font-family: 'Poppins', sans-serif;
+            color: #706e95;
+        }
+    
+        .exec-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+    
+        .exec-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .call-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+    
+        .call-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    
+        .call-info p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+    
+        .call-info ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    
+        .call-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+    
+        .call-info li::before {
+            content: "💜";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .inquiries{
+            background-color: purple;
+        }
+        .general-inquiry {
+            background-color: #706e95;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+    
+        .general-inquiry h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    
+        .general-inquiry p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+    
+        .general-inquiry .cta-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 1rem 2rem;
+            background-color: #5c4f95;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(92, 79, 149, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .general-inquiry .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(92, 79, 149, 0.7);
+        }
+    
+        .general-inquiry .footer-text {
+            opacity: 0.8;
+        }
+        .inquiry-text p {
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .contact-email {
+            margin-top: 0.5rem; /* Adjust the spacing between the lines */
+            font-weight: normal;
+            display: block;
+        }
+        
+        
+        .operation-nexus {
+            font-weight: bold;
+        }
+        
+        .all-rights {
+            margin-top: 0.1rem; /* Minimal space between the two lines */
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            background-color: #FFFFFF;
+        }
+
+        .header-content {
+            width: 50%;
+            justify-content: left;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #706e95;
+            font-weight: 800;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #706e95;
+            line-height: 1.6;
+        }
+
+        .header-image {
+            width: 45%;
+            height: auto;
+            object-fit: cover;
+        }
+        .divider {
+            position: relative;
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+          }
+          
+          .divider svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+          }
+          .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .company-logo {
+            max-width: 100%;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-container:hover .company-logo {
+            filter: drop-shadow(0 0 10px rgba(112, 110, 149, 0.7));
+        }
+
+        .section-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .section-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+        }
+        
+        /* Add specific colors for each section */
+        .divider-header-about {
+            background-color: #FFFFFF;
+        }
+
+        .divider-about-services {
+            background-color: #706e95;
+        }
+
+        .divider-services-trusted {
+            background-color: #FFFFFF;
+        }
+
+        .divider-trusted-execs {
+            background-color: #4b3b86;
+        }
+
+        .divider-execs-schedule {
+            background-color: #FFFFFF;
+        }
+
+        .divider-schedule-inquiry {
+            background-color: #706e95;
+        }
+        .section-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .section-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+        }
+
+        /* Add specific colors for each section */
+        .divider-header-about {
+            background-color: #FFFFFF;
+        }
+
+        .divider-about-services {
+            background-color: #706e95;
+        }
+
+        .divider-services-trusted {
+            background-color: #FFFFFF;
+        }
+
+        .divider-trusted-execs svg {
+            background-image: url('trustedby.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .divider-execs-schedule {
+            background-color: #FFFFFF;
+        }
+
+        .divider-schedule-inquiry {
+            background-color: #706e95;
+        }
+    </style>    
+    </head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">Operation Nexus</div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="services.html">Book our Services</a>
+            <a href="#our-team">Meet Our Team</a>
+            <a href="#schedule-call">Schedule a Call</a>
+        </div>
+        <a target="_blank" href="https://calendly.com/tengcarmen00/30min">
+        <button class="nav-button">Speak to Our Team</button>
+        </a>
+    </nav>
+
+
+    <header id="#home" class="header">
+        <div class="header-content">
+            <h1>OPERATION NEXUS</h1>
+            <h2>Building Company Success: Student-Led Marketing Strategies and Web Development, from Weekly Spotlights to Full-Service Campaigns and Website Solutions.</h2>
+            <a target="_blank" href="https://calendly.com/tengcarmen00/30min">
+            <button class="cta-button">
+                <span class="cta-text">Speak to our team today</span>
+                <br>
+                <span class="subtext">Schedule your free consultation call now</span>
+            </button>
+            </a>
+        </div>
+        <img src="header.png" alt="Operation Nexus Header Image" class="header-image">
+    </header>
+    <div class="divider">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 20" preserveAspectRatio="none">
+          <path fill="none" stroke="#706e95" stroke-width="2" d="M0,10 C240,20 480,0 720,10 C960,20 1200,0 1440,10" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+    <section id="about-us" class="why-us-about">
+        <img src="Stats.png" style="width:35rem;height:35rem;margin-left:3rem;margin-top:4rem;" alt="Operation Nexus Stats">
+        <div class="about-us-content">
+            <h2>About Us</h2>
+            <p>We are a student-led marketing agency that specializes in creating engaging and effective websites for businesses and organizations. Our team of talented designers, developers, and strategists work closely with our clients to understand their unique needs and goals, and then craft custom solutions that help them stand out in the digital landscape.</p>
+            <div class="call-to-action">
+                <p style="font-weight:bold; font-size:1.2rem;text-align:left;margin-top:-1rem;">Ready to grow your company?</p>
+                <p style="font-weight:bold; font-size:1.2rem; text-align:left;margin-top:1rem;">Schedule your FREE discovery call below.</p>
+                <a target="blank" href="https://calendly.com/tengcarmen00/30min">
+                <button class="cta-button">
+                    <span class="cta-text">Speak to our team today</span>
+                    <br> 
+                    <span class="subtext">Schedule your free consultation call now</span>
+                </button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider divider-about-services">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="#FFFFFF" d="M0,100 C300,20 900,100 1440,20 L1440,0 L0,0 Z"></path>
+        </svg>
+    </div>
+
+    <section class="services">
+        <h2>Operation Nexus Services</h2>
+        <div class="service-grid">
+            <div class="service-category">
+                <h3>Marketing Services</h3>
+                <ul class="service-list">
+                    <li><span class="checkmark">✔</span>CREATING REELS</li>
+                    <li><span class="checkmark">✔</span>MARKETING PACKAGES</li>
+                    <li><span class="checkmark">✔</span>LONG-TERM MARKETING PLANS</li>
+                    <li><span class="checkmark">✔</span>POST IDEAS</li>
+                    <li><span class="checkmark">✔</span>TIPS/ RESOURCES</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Web Development Services</h3>
+                <ul class="service-list">
+                    <li><span class="checkmark">✔</span>CREATING WEBSITES FOR BUSINESSES/ORGS</li>
+                    <li><span class="checkmark">✔</span>HELP EDIT CURRENT SITES</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Organizational Support</h3>
+                <ul class="service-list">
+                    <li><span class="checkmark">✔</span>WEEKLY ORG SPOTLIGHT</li>
+                    <li><span class="checkmark">✔</span>TEMPORARY EXECUTIVES FOR INITIATIVES</li>
+                    <li><span class="checkmark">✔</span>COLLABORATIONS</li>
+                    <li><span class="checkmark">✔</span>PLANNING EVENTS</li>
+                </ul>
+            </div>
+        </div>
+        <a target="_blank" href="https://calendly.com/tengcarmen00/30min">
+        <button class="execs-button">
+            <span class="execs-text" style="color:black; font-family:Poppins,sans-serif;">Speak to our team today</span>
+            <br>
+            <span class="subtext" style="color:black;">Schedule your free consultation call now</span>
+        </button>
+        </a>
+    </section>
+
+    <section class="trusted-by" style="background-image: url('trustedby.png'); background-position: center;">
+        <h1 style="font-size:2rem;color:#4b3b86">Companies that Trust Us </h1>
+        <div class="logo-grid">
+            <div class="logo-container">
+                <img style="width:93%" src="localservices.png" alt="Company 1 Logo" class="company-logo">
+            </div>
+            <div class="logo-container">
+                <img src="stemacademies.png" alt="Company 2 Logo" class="company-logo">
+            </div>
+            <div class="logo-container">
+                <img style="width:90%" src="consultants.png" alt="Company 3 Logo" class="company-logo">
+            </div>
+            <div class="logo-container">
+                <img style="width:200%" src="orgs.png" alt="Company 4 Logo" class="company-logo">
+            </div>
+        </div>
+        <!--<div class="testimonial-grid">
+            <div class="testimonial">
+                <h3>John Doe</h3>
+                <p>CEO, Acme Inc.</p>
+                <p>"The Student Led Marketing Agency has been an invaluable partner in helping us create a stunning website that perfectly represents our brand. Their team's creativity and attention to detail are unparalleled."</p>
+            </div>
+            <div class="testimonial">
+                <h3>Jane Smith</h3>
+                <p>Marketing Manager, XYZ Corp.</p>
+                <p>"Working with the Student Led Marketing Agency has been a game-changer for our business. Their digital marketing expertise has helped us reach new heights and connect with our target audience in a more meaningful way."</p>
+            </div>
+        </div>
+    !-->
+    </section>
+    <section id="our-team"class="meet-our-execs">
+        <h2>Meet Our Executive Team</h2>
+        <a  target="_blank"  href="https://calendly.com/tengcarmen00/30min">
+        <button class="execs-button">
+            <span class="execs-text" style="color:black; font-family:Poppins;sans-serif;">Speak to our team today</span>
+            <br>
+            <span class="subtext" style="color:black;">Schedule your free consultation call now</span>
+        </button>
+        </a>
+        <div class="execs-grid">
+            <div>
+                <div class="exec-circle">
+                    <img src="carmen.jpg" alt="Exec 1">
+                </div>
+                <div class="exec-name">Carmen Teng</div>
+                <div class="exec-title">CEO ・ Founder</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="kaitlyn.jpg" alt="Exec 2">
+                </div>
+                <div class="exec-name">Kaitlyn Ye</div>
+                <div class="exec-title">CEO ・ Founder</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="aditi.jpg" alt="Exec 3">
+                </div>
+                <div class="exec-name">Aditi Chhawacharia</div>
+                <div class="exec-title">CTO ・ Founder</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="keith.jpg" alt="Exec 4">
+                </div>
+                <div class="exec-name">Keith Teng</div>
+                <div class="exec-title">COO ・ Founder</div>
+            </div>
+            
+        </div>
+        <div class="execs-grid">
+            <div>
+                <div class="exec-circle">
+                    <img src="hong-an.jpg" alt="Exec 5">
+                </div>
+                <div class="exec-name">Hong-An Phan</div>
+                <div class="exec-title">CMO</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="adalee.jpg" alt="Exec 6">
+                </div>
+                <div class="exec-name">Adalee Chuang</div>
+                <div class="exec-title">CMO</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="fimii.jpg" alt="Exec 7">
+                </div>
+                <div class="exec-name">Fimii Ma</div>
+                <div class="exec-title">Former CEO ・ Founder</div>
+            </div>
+            <div>
+                <div class="exec-circle">
+                    <img src="yaajyansh.jpg" alt="Exec 8">
+                </div>
+                <div class="exec-name">Yaajyansh Bhardwaj</div>
+                <div class="exec-title">Former COO ・ Founder</div>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider divider-execs-schedule">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="#FFFFFF" d="M0,100 C300,20 900,100 1440,20 L1440,0 L0,0 Z"></path>
+        </svg>
+    </div>
+    <section id="schedule-call" class="schedule-call">
+        <div class="calendly-container">
+            <!-- Replace with your actual Calendly embed code -->
+            <iframe src="https://calendly.com/tengcarmen00/30min?month=2024-08" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
+        </div>
+        <div class="call-info">
+            <div class="exec-icon">
+                <img src="carmen.jpg" alt="Carmen">
+            </div>
+            <h3>Schedule your call with Carmen</h3>
+            <h2 style="margin: bottom 10px;">Free 15-Minute Demo Call</h2>
+            <p>By the end of this consultation call, you'll have a clear understanding of how our student-led agency can help your business or organization thrive in the digital landscape through marketing, web development, and organizational support. We look forward to speaking with you soon!</p>
+            <h3>THIS CONSULTATION CALL IS PERFECT FOR:</h3>
+            <ul>
+                <li>Businesses and organizations looking to enhance their social media presence with creative reels and posts</li>
+                <li>Companies seeking detailed marketing packages and long-term marketing plans tailored to their unique needs</li>
+                <li>Organizations in need of a new website or improvements to their current site</li>
+                <li>Student groups or startups looking for organizational support, including event planning and temporary executive assistance</li>
+                <li>Businesses interested in collaborating with a student-led agency for new perspectives and innovative solutions</li>
+            </ul>
+        </div>
+    </section>
+    <section class="general-inquiry">
+        <h2>Have a General Inquiry?</h2>
+        <p>If you have a general inquiry and would like to speak to our expert team, you can contact us via email at: operationnexusbusiness@gmail.com </p>
+        <a target="_blank" href="https://calendly.com/tengcarmen00/30min">
+        <button class="execs-button">
+            <span class="execs-text" style="color:black; font-family:Poppins,sans-serif;">Speak to our team today</span>
+            <br>
+            <span class="subtext" style="color:black;">Schedule your free consultation call now</span>
+        </button>
+        </a>
+            <b><p style="font-size:medium;">Operation Nexus</p></b>
+            <p style="font-size:small; top: margin 1000rem;">All Rights Reserved | All Wrongs Reversed</p>
+    </section>
+</body>
+</html>
